@@ -17,7 +17,7 @@
       <div class="group justify-items-start grid">
         <a
           routerLink="#"
-          class="flex items-center gap-1 text-sky-600 group-hover:text-gray-500 group-hover:bg-gray-100 p-1 rounded-md z-0 transition duration-300"
+          class="flex items-center gap-1 text-sky-600 group-hover:text-gray-500 group-hover:bg-gray-100 p-1 px-2.5 rounded-md z-0 transition duration-300"
         >
           <lucide-icon
             [img]="Project"
@@ -28,7 +28,7 @@
         </a>
 
         <div
-          class="opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus:opacity-100 group-focus:pointer-events-auto transition-opacity duration-300"
+          class="absolute top-12 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus:opacity-100 group-focus:pointer-events-auto transition-opacity duration-300"
         >
           <app-popover>
             <div class="flex flex-col gap-4">
@@ -53,22 +53,43 @@
 
     <!-- Right part -->
     <div class="flex items-center divide-solid divide-x-2 divide-gray-50">
-      <div class="flex pr-10 gap-10 items-center">
+      <div class="flex pr-10 gap-8 items-center">
+        <!-- Discover Trending Project -->
         <div class="group">
           <a
             routerLink="#"
             class="text-sky-600 group-hover:text-gray-500 duration-200"
           >
-            <lucide-icon [img]="Project"></lucide-icon>
+            <lucide-icon [img]="DiscoverProject"></lucide-icon>
+          </a>
+        </div>
+
+        <!-- Community -->
+        <div class="group">
+          <a
+            routerLink="#"
+            class="text-sky-600 group-hover:text-gray-500 duration-200"
+          >
+            <lucide-icon [img]="Community"></lucide-icon>
+          </a>
+        </div>
+
+        <!-- Notification  -->
+        <div class="group">
+          <a
+            routerLink="#"
+            class="text-sky-600 group-hover:text-gray-500 duration-200"
+          >
+            <lucide-icon [img]=""></lucide-icon>
           </a>
         </div>
       </div>
 
-      <div class="group">
-        <a class="pl-5 flex items-center gap-2">
+      <div class="group grid justify-items-start">
+        <a class="px-5 flex items-center gap-2">
           <img
             src="https://placehold.co/64"
-            class="rounded-full w-8 h-8 border-4 transition duration-300 border-cyan-300 group-hover:border-gray-500"
+            class="rounded-full size-8 border-4 transition duration-300 border-cyan-300 group-hover:border-gray-500"
             alt="Avatar"
           />
           <lucide-icon
@@ -76,6 +97,36 @@
             class="text-sky-600 transition duration-300 group-hover:text-gray-500"
           ></lucide-icon>
         </a>
+
+        <div class="absolute top-12 right-2">
+          <app-popover>
+            <div class="divide-solid divide-cyan-300 divide-y">
+              <!-- Overall -->
+              <div class="flex p-3 pt-0 gap-6 items-center">
+                <img
+                  src="https://placehold.co/64"
+                  class="rounded-full size-16"
+                  alt="Avatar"
+                />
+                <div class="flex flex-col h-20 justify-around">
+                  <div>
+                    <h5 class="font-bold text-lg">John Doe</h5>
+                    <p class="text-xs text-gray-500">johndoe&#64;email.com</p>
+                  </div>
+
+                  <a
+                    routerLink=""
+                    class="font-medium text-sky-600 hover:text-gray-500"
+                    >Edit profile</a
+                  >
+                </div>
+              </div>
+              <!-- Menu -->
+
+              <!-- Logout -->
+            </div>
+          </app-popover>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import {
+  Bell,
   ChevronDown,
+  CircleHelp,
+  Compass,
   ComponentIcon,
   FolderOpenDot,
   LucideAngularModule,
@@ -25,4 +28,7 @@ export class HeaderComponent {
   readonly Logo = ComponentIcon;
   readonly Project = FolderOpenDot;
   readonly ChevronDown = ChevronDown;
+  readonly DiscoverProject = Compass;
+  readonly Community = CircleHelp;
+  readonly Notification = Bell;
 }
