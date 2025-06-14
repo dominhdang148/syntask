@@ -1,0 +1,197 @@
+<header class="bg-slate-200">
+  <div class="mx-auto flex h-12 px-4 items-center justify-between">
+    <!-- Left part -->
+    <div class="flex gap-3 items-center">
+      <div class="group grid justify-items-end">
+        <a routerLink="/" class="flex gap-2 z-0">
+          <lucide-icon
+            [img]="Logo"
+            size="28"
+            class="text-sky-500"
+          ></lucide-icon>
+          <span class="font-semibold text-xl">SynTask</span>
+        </a>
+        <app-tooltip label="Homepage" />
+      </div>
+
+      <div class="group justify-items-start grid">
+        <a
+          routerLink="#"
+          class="flex items-center gap-1 text-sky-500 group-hover:text-gray-500 group-hover:bg-gray-100 p-1 px-2.5 rounded-md z-0 transition duration-300"
+        >
+          <lucide-icon
+            [img]="Project"
+            size="16"
+            class="transition duration-300"
+          ></lucide-icon>
+          <span class="font-medium transition duration-300">Projects</span>
+        </a>
+
+        <div
+          class="text-sm w-80 absolute top-12 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus:opacity-100 group-focus:pointer-events-auto transition-opacity duration-300"
+        >
+          <app-popover>
+            <div class="flex flex-col gap-4">
+              <h4 class="text-lg font-medium">Create your first project</h4>
+              <p class="text-gray-500">
+                You don't have any project yet. Create one now, invite your team
+                and start using Syntask to the fullest.
+              </p>
+
+              <!-- TODO: Create separated button component. -->
+              <a
+                routerLink="#"
+                class="flex p-2 w-full justify-center bg-cyan-300 font-medium rounded-md hover:bg-sky-500 hover:text-white transition-colors duration-300"
+              >
+                NEW PROJECT
+              </a>
+            </div>
+          </app-popover>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right part -->
+    <div class="flex items-center divide-solid divide-x-2 divide-gray-50">
+      <div class="flex pr-10 gap-8 items-center">
+        <!-- Discover Trending Project -->
+        <div class="group grid justify-items-end">
+          <a
+            routerLink="#"
+            class="text-sky-500 group-hover:text-gray-500 duration-200"
+          >
+            <lucide-icon [img]="DiscoverProject"></lucide-icon>
+          </a>
+          <app-tooltip label="Discover trending projects" />
+        </div>
+
+        <!-- Community -->
+        <div class="group">
+          <a
+            routerLink="#"
+            class="text-sky-500 group-hover:text-gray-500 duration-200"
+          >
+            <lucide-icon [img]="Community"></lucide-icon>
+          </a>
+          <div
+            class="absolute top-12 right-12 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300"
+          >
+            <app-popover>
+              <a
+                href="#"
+                class="w-full flex gap-2 text-gray-500 items-center hover:text-sky-500 duration-300"
+              >
+                <lucide-icon
+                  [img]="CommunityLogo"
+                  class="text-sky-500"
+                ></lucide-icon>
+                <span class="font-medium">Syntask Community</span>
+              </a>
+            </app-popover>
+          </div>
+        </div>
+
+        <!-- Notification  -->
+        <div class="group">
+          <a
+            routerLink="#"
+            class="text-sky-500 group-hover:text-gray-500 duration-200"
+          >
+            <lucide-icon [img]="Notification"></lucide-icon>
+          </a>
+          <div
+            class="absolute top-12 right-36 w-96 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300"
+          >
+            <app-popover>
+              <div class="w-full grid justify-items-end pb-3">
+                <button type="button" class="text-xs font-light text-gray-700">
+                  dismiss all
+                </button>
+              </div>
+
+              <div class="divide-cyan-300 divide-solid divide-y">
+                <div class="p-3 pt-0">
+                  <span class="text-gray-500">No new event</span>
+                </div>
+                <div class="p-3">
+                  <a
+                    routerLink=""
+                    class="font-medium text-sm text-sky-500 hover:text-gray-500 duration-300"
+                    >View all notifications</a
+                  >
+                </div>
+              </div>
+            </app-popover>
+          </div>
+        </div>
+      </div>
+      <div class="group grid justify-items-start">
+        <a class="px-5 flex items-center gap-2">
+          <img
+            src="https://placehold.co/64"
+            class="rounded-full size-8 border-4 transition duration-300 border-cyan-300 group-hover:border-gray-500"
+            alt="Avatar"
+          />
+          <lucide-icon
+            [img]="ChevronDown"
+            class="text-sky-500 transition duration-300 group-hover:text-gray-500"
+          ></lucide-icon>
+        </a>
+
+        <div
+          class="absolute top-12 right-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300"
+        >
+          <app-popover>
+            <div class="divide-solid divide-cyan-300 px-1 divide-y">
+              <!-- Overall -->
+              <div class="flex p-4 pt-1 gap-6 items-center">
+                <img
+                  src="https://placehold.co/64"
+                  class="rounded-full size-20"
+                  alt="Avatar"
+                />
+                <div class="flex flex-col h-20 justify-between">
+                  <div>
+                    <h5 class="font-semibold text-lg">John Doe</h5>
+                    <span class="text-sm line-clamp-1 text-gray-500">
+                      johndoe&#64;email.com
+                    </span>
+                  </div>
+
+                  <a
+                    routerLink=""
+                    class="font-medium text-sky-500 hover:text-gray-500 duration-300"
+                  >
+                    Edit profile
+                  </a>
+                </div>
+              </div>
+
+              <!-- Menu -->
+
+              <div class="flex flex-col gap-3 p-4">
+                @for (item of profileMenuItems; track item) {
+                  <a
+                    routerLink=""
+                    class="font-medium text-gray-500 hover:text-sky-500 duration-300"
+                  >
+                    {{ item.label }}
+                  </a>
+                }
+              </div>
+              <!-- Logout -->
+              <div class="p-4 pb-1">
+                <a
+                  routerLink=""
+                  class="font-medium text-sky-500 hover:text-gray-500 duration-300"
+                >
+                  Log out
+                </a>
+              </div>
+            </div>
+          </app-popover>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
