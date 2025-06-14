@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { TooltipComponent } from '../../shared/components/tooltip/tooltip.component';
+import { PopoverComponent } from './popover/popover.component';
+import { RouterLink } from '@angular/router';
+import { MenuItem } from '../../shared/models/menu-item';
 import {
   Bell,
   ChevronDown,
   CircleHelp,
+  Command,
   Compass,
   ComponentIcon,
   FolderOpenDot,
   LucideAngularModule,
 } from 'lucide-angular';
-import { TooltipComponent } from '../../shared/components/tooltip/tooltip.component';
-import { PopoverComponent } from './popover/popover.component';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -31,4 +33,19 @@ export class HeaderComponent {
   readonly DiscoverProject = Compass;
   readonly Community = CircleHelp;
   readonly Notification = Bell;
+  readonly CommunityLogo = Command;
+  profileMenuItems: MenuItem[] = [
+    {
+      label: 'Paid plan',
+      route: '#',
+    },
+    {
+      label: 'Account Setting',
+      route: '#',
+    },
+    {
+      label: 'Notifications',
+      route: '#',
+    },
+  ];
 }

@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './popover.component.html',
-  styleUrl: './popover.component.css'
+  styleUrl: './popover.component.css',
 })
-export class PopoverComponent {
-
-}
+export class PopoverComponent {}
