@@ -1,0 +1,43 @@
+<div class="flex group hover:bg-gray-100 items-center py-3 px-2">
+  <div class="flex grow gap-5">
+    <!-- Ticket avatar -->
+    <img class="size-14 rounded-full" [src]="ticket.projectImageUrl" />
+    <div class="flex flex-col justify-between">
+      <!-- Ticket title -->
+      <div class="text-lg">
+        <!-- Project name -->
+        <span class="text-gray-400">
+          {{ ticket.projectName }}
+        </span>
+
+        <!-- Ticket Type (USER STORY/ISSUE) -->
+        <span class="text-gray-500">
+          {{ ticket.ticketType }}
+        </span>
+
+        <!-- Ticket Status -->
+        <!-- NOTE: Text color changed by status -->
+        <span class="text-gray-500">
+          {{ ticket.ticketStatus }}
+        </span>
+      </div>
+      <!-- Ticket description -->
+      <div class="text-lg">
+        <!-- Ticket number -->
+        <span class="text-sky-500"> #{{ ticket.ticketNumber }} </span>
+        <!-- Ticket title -->
+        <span class="text-gray-600">
+          {{ ticket.title }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="grow-0">
+    <button
+      (click)="onToggleHidden()"
+      class="opacity-0 group-hover:opacity-100 p-2 text-gray-500"
+    >
+      <lucide-icon [img]="ticket.visible ? hidden : visible"></lucide-icon>
+    </button>
+  </div>
+</div>

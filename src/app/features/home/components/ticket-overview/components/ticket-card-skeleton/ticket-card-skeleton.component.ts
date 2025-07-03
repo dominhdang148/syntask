@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './ticket-card-skeleton.component.html',
-  styleUrl: './ticket-card-skeleton.component.css'
+  styleUrl: './ticket-card-skeleton.component.css',
 })
-export class TicketCardSkeletonComponent {
-
-}
+export class TicketCardSkeletonComponent {}

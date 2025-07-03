@@ -1,0 +1,63 @@
+<div class="w-full">
+  <!-- Header -->
+  <h3 class="px-3 py-2 text-xl text-sky-500 bg-gray-200">
+    {{ title }}
+  </h3>
+
+  <!-- Body -->
+  <div
+    class="divide-solid divide-gray-400 divide-y"
+    *ngIf="ticketList.length; else emptyList"
+  >
+    <div class="divide-solid divide-gray-200 divide-y pt-2 pb-10">
+      <div *ngFor="let ticket of visibleTicketList">
+        <app-ticket-card [ticket]="ticket"></app-ticket-card>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="hiddenTicketList.length; else emptyHidden" class="mt-2 mb-5">
+        <button
+          (click)="onToggleVisible()"
+          class="w-full text-sky-500 hover:text-gray-500 text-center duration-300"
+        >
+          {{
+            isHiddenVisible
+              ? "Do not show hidden objects"
+              : "Show hidden objects"
+          }}
+        </button>
+      </div>
+      <div
+        *ngIf="isHiddenVisible"
+        class="divide-solid divide-gray-200 divide-y pt-2 pb-5"
+      >
+        <div *ngFor="let ticket of hiddenTicketList">
+          <app-ticket-card [ticket]="ticket"></app-ticket-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Empty list component: Only display when ticket list is empty -->
+<ng-template #emptyList>
+  <!-- Empty message -->
+  <!-- TODO: Make this text as input value -->
+  <ng-container *ngTemplateOutlet="emptyContent"> </ng-container>
+  <!-- Empty ticket skeleton -->
+  <div class="divide-solid divide-gray-200 divide-y">
+    <div>
+      <app-ticket-card-skeleton></app-ticket-card-skeleton>
+    </div>
+    <div>
+      <app-ticket-card-skeleton></app-ticket-card-skeleton>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Empty list component: Only display when hidden ticket list is empty -->
+<ng-template #emptyHidden>
+  <div class="mt-2">
+    <p class="w-full text-center">You have no hidden items</p>
+  </div>
+</ng-template>
